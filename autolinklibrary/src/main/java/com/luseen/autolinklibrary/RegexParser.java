@@ -1,4 +1,4 @@
-package com.luseen.activetextview;
+package com.luseen.autolinklibrary;
 
 import android.util.Patterns;
 

@@ -1,4 +1,4 @@
-package com.luseen.activetextview;
+package com.luseen.autolinklibrary;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -9,7 +9,6 @@ import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.TextView;
 
@@ -22,7 +21,7 @@ import java.util.regex.Pattern;
  * Created by Chatikyan on 25.09.2016-18:53.
  */
 
-public class AutoLinkTextView extends TextView {
+public final class AutoLinkTextView extends TextView {
 
     private final int MIN_PHONE_NUMBER_LENGTH = 8;
 

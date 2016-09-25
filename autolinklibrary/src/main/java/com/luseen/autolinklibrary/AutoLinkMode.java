@@ -1,4 +1,4 @@
-package com.luseen.activetextview;
+package com.luseen.autolinklibrary;
 
 /**
  * Created by Chatikyan on 25.09.2016-22:02.

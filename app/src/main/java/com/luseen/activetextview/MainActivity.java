@@ -5,6 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.luseen.autolinklibrary.AutoLinkMode;
+import com.luseen.autolinklibrary.AutoLinkOnClickListener;
+import com.luseen.autolinklibrary.AutoLinkTextView;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -29,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         textView.setAutoLinkOnClickListener(new AutoLinkOnClickListener() {
             @Override
             public void onAutoLinkTextClick(String matchedText) {
-                Log.e("onActiveClick ", "" + matchedText);
+                Log.e("onAutoLinkTextClick ", "" + matchedText);
             }
         });
     }
