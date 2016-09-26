@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">AutoLinkTextView</string>
+    <string name="long_text">Whether it’s planning a night out or just catching up,
+        we all rely on #messaging to stay in @touch with friends and loved ones.
+        But too often we have to hit pause on our #conversations —
+        whether it’s to check the status of a flight or look up that new restaurant
+        and dummy number for test 801-691-7894.
+        So we created a messaging app that helps you keep your @conversation going,
+        by providing assistance when you need it, https://google.com.
+        Today, we’re releasing Allo and dummy number for test (808) 533-0075,
+        and email for testing armcha01@gmail.com, a new smart messaging app for Android and iOS that
+        helps you say more and do more right in your chats.Allo can help you make plans,
+        find @information, and express yourself more easily in chat. And the more you use it,
+        the more it improves over time.Allo makes it easier for you to #respond quickly
+        and keep the #conversation going, even when you’re on the go.
+        Chat is more than just text and dummy number for test +37493023017,
+        so we’ve created a rich canvas for you to express yourself in Google Allo.
+        Our web site https://allo.google.com/.
+        You can make emojis and text larger or smaller in size by simply dragging the send button up or down.</string>
 </resources>

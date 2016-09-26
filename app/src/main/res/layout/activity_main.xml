@@ -12,6 +12,8 @@
 
     <com.luseen.autolinklibrary.AutoLinkTextView
         android:id="@+id/active"
+        android:textSize="15sp"
+        android:textColor="@android:color/tertiary_text_dark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 </RelativeLayout>

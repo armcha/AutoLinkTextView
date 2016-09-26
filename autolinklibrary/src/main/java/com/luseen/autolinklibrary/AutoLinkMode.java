@@ -6,10 +6,21 @@ package com.luseen.autolinklibrary;
 
 public enum AutoLinkMode {
 
-    MODE_HASHTAG,
-    MODE_MENTION,
-    MODE_URL,
-    MODE_PHONE,
-    MODE_EMAIL,
-    MODE_CUSTOM
+    MODE_HASHTAG("Hashtag"),
+    MODE_MENTION("Mention"),
+    MODE_URL("Url"),
+    MODE_PHONE("Phone"),
+    MODE_EMAIL("Email"),
+    MODE_CUSTOM("Custom");
+
+    private String name;
+
+    AutoLinkMode(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }

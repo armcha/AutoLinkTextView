@@ -99,6 +99,11 @@ public final class AutoLinkTextView extends TextView {
     private List<AutoLinkItem> matchedRanges(String text) {
 
         List<AutoLinkItem> autoLinkItems = new LinkedList<>();
+
+        if(autoLinkModes == null){
+            throw new NullPointerException("Please add at least on mode");
+        }
+
         for (AutoLinkMode anAutoLinkMode : autoLinkModes) {
             String regex = Utils.getRegexByAutoLinkMode(anAutoLinkMode, customRegex);
             Pattern pattern = Pattern.compile(regex);
@@ -171,7 +176,7 @@ public final class AutoLinkTextView extends TextView {
         this.customModeColor = customModeColor;
     }
 
-    public void setSelectedColor(@ColorInt int defaultSelectedColor) {
+    public void setSelectedStateColor(@ColorInt int defaultSelectedColor) {
         this.defaultSelectedColor = defaultSelectedColor;
     }
 
