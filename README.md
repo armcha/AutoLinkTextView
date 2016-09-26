@@ -61,23 +61,23 @@ Customizing
 
 AutoLinkModes
 
-AutoLinkMode.MODE_PHONE___|
+AutoLinkMode.MODE_PHONE_____
 ![](screens/screen2.png)
 
-AutoLinkMode.MODE_HASHTAG_|
+AutoLinkMode.MODE_HASHTAG___
 ![](screens/screen3.png)
 
-AutoLinkMode.MODE_URL_____|
+AutoLinkMode.MODE_URL_______
 ![](screens/screen4.png)
 
-AutoLinkMode.MODE_MENTION_|
+AutoLinkMode.MODE_MENTION___
 ![](screens/screen5.png)
 
-AutoLinkMode.MODE_EMAIL___|
+AutoLinkMode.MODE_EMAIL_____
 ![](screens/screen6.png)
 
 AutoLinkMode.MODE_CUSTOM
-![](screens/screen7)______|
+![](screens/screen7.png)____
 if you use custom mode, you should also add custom regex,
 ```java
 autoLinkTextView.addCustomRegex("\\sGoogle\\b");
