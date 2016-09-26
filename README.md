@@ -62,19 +62,19 @@ Customizing
 AutoLinkModes
 
 AutoLinkMode.MODE_PHONE
-![](screens/screen2)
+![](screens/screen2.png)
 
 AutoLinkMode.MODE_HASHTAG
-![](screens/screen3)
+![](screens/screen3.png)
 
 AutoLinkMode.MODE_URL
-![](screens/screen4)
+![](screens/screen4.png)
 
 AutoLinkMode.MODE_MENTION
-![](screens/screen5)
+![](screens/screen5.png)
 
 AutoLinkMode.MODE_EMAIL
-![](screens/screen6)
+![](screens/screen6.png)
 
 AutoLinkMode.MODE_CUSTOM
 if you use custom mode, you should also add custom regex,
