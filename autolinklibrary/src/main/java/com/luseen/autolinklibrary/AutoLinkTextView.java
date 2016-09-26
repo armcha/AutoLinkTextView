@@ -65,11 +65,12 @@ public final class AutoLinkTextView extends TextView {
     }
 
     public void setAutoLinkText(String text, int autoLinkTextColor) {
+        // TODO: 26.09.2016 remove after publication
         long startTime = System.currentTimeMillis();
 
         SpannableString spannableString = makeSpannableString(text);
         setText(spannableString);
-        setMovementMethod(LinkMovementMethod.getInstance());
+        setMovementMethod(new LinkTouchMovementMethod());
         setLinkTextColor(autoLinkTextColor);
 
         long endTime = System.currentTimeMillis();
@@ -84,40 +85,15 @@ public final class AutoLinkTextView extends TextView {
         List<AutoLinkItem> autoLinkItems = matchedRanges(text);
 
         for (final AutoLinkItem autoLinkItem : autoLinkItems) {
-            ClickableSpan clickableSpan = new ClickableSpan() {
+            int currentColor = getColorByMode(autoLinkItem.getAutoLinkMode());
+
+            TouchableSpan clickableSpan = new TouchableSpan(currentColor, defaultSelectedColor) {
                 @Override
                 public void onClick(View widget) {
                     if (autoLinkOnClickListener != null)
                         autoLinkOnClickListener.onAutoLinkTextClick(
                                 autoLinkItem.getAutoLinkMode(),
                                 autoLinkItem.getMatchedText());
-
-                    int currentColor = getColorByMode(autoLinkItem.getAutoLinkMode());
-
-                    MutableForegroundColorSpan span = new MutableForegroundColorSpan(currentColor);
-                    spannableString.setSpan(span, autoLinkItem.getStartPoint(),
-                            autoLinkItem.getEndPoint(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-
-                    ObjectAnimator objectAnimator =
-                            ObjectAnimator.ofInt(span,
-                                    MUTABLE_FOREGROUND_COLOR_SPAN_FC_PROPERTY,
-                                    defaultSelectedColor,
-                                    currentColor);
-                    objectAnimator.setEvaluator(new ArgbEvaluator());
-                    objectAnimator.setDuration(DEFAULT_ANIMATION_DURATION);
-                    objectAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-                        @Override
-                        public void onAnimationUpdate(ValueAnimator animation) {
-                            setText(spannableString);
-                        }
-                    });
-                    objectAnimator.start();
-                }
-
-                @Override
-                public void updateDrawState(TextPaint ds) {
-                    super.updateDrawState(ds);
-                    ds.setUnderlineText(false);
                 }
             };
 
@@ -126,32 +102,10 @@ public final class AutoLinkTextView extends TextView {
                     autoLinkItem.getStartPoint(),
                     autoLinkItem.getEndPoint(),
                     Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-
-            if (isColorSet()) {
-                spannableString.setSpan(
-                        new MutableForegroundColorSpan(getColorByMode(autoLinkItem.getAutoLinkMode())),
-                        autoLinkItem.getStartPoint(),
-                        autoLinkItem.getEndPoint(),
-                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            }
         }
 
         return spannableString;
     }
-
-    private static final Property<MutableForegroundColorSpan, Integer> MUTABLE_FOREGROUND_COLOR_SPAN_FC_PROPERTY =
-            new Property<MutableForegroundColorSpan, Integer>(Integer.class, "MUTABLE_FOREGROUND_COLOR_SPAN_FC_PROPERTY") {
-
-                @Override
-                public void set(MutableForegroundColorSpan span, Integer value) {
-                    span.setForegroundColor(value);
-                }
-
-                @Override
-                public Integer get(MutableForegroundColorSpan span) {
-                    return span.getForegroundColor();
-                }
-            };
 
     private List<AutoLinkItem> matchedRanges(String text) {
 
@@ -225,15 +179,6 @@ public final class AutoLinkTextView extends TextView {
             default:
                 return DEFAULT_COLOR;
         }
-    }
-
-    private boolean isColorSet() {
-        return !(mentionModeColor == DEFAULT_COLOR &&
-                urlModeColor == DEFAULT_COLOR &&
-                phoneModeColor == DEFAULT_COLOR &&
-                emailModeColor == DEFAULT_COLOR &&
-                customModeColor == DEFAULT_COLOR &&
-                hashtagModeColor == DEFAULT_COLOR);
     }
 
     public void setMentionModeColor(@ColorInt int mentionModeColor) {

@@ -11,17 +11,5 @@ import android.util.Property;
 
 public class Utils {
 
-    static final Property<MutableForegroundColorSpan, Integer> MUTABLE_FOREGROUND_COLOR_SPAN_PROPERTY =
-            new Property<MutableForegroundColorSpan, Integer>(Integer.class, "MUTABLE_FOREGROUND_COLOR_SPAN_FC_PROPERTY") {
 
-                @Override
-                public void set(MutableForegroundColorSpan span, Integer value) {
-                    span.setForegroundColor(value);
-                }
-
-                @Override
-                public Integer get(MutableForegroundColorSpan span) {
-                    return span.getForegroundColor();
-                }
-            };
 }
