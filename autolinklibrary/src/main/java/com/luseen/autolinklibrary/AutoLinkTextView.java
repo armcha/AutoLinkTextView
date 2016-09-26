@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -39,7 +40,7 @@ public final class AutoLinkTextView extends TextView {
 
     @Override
     public void setHighlightColor(int color) {
-        super.setHighlightColor(Color.TRANSPARENT);
+        super.setHighlightColor(color);
     }
 
     public void setAutoLinkText(String text, int autoLinkTextColor) {
@@ -49,6 +50,7 @@ public final class AutoLinkTextView extends TextView {
         setText(spannableString);
         setMovementMethod(LinkMovementMethod.getInstance());
         setLinkTextColor(autoLinkTextColor);
+        setHighlightColor(Color.GREEN);
 
         long endTime = System.currentTimeMillis();
         long duration = (endTime - startTime);
@@ -62,12 +64,13 @@ public final class AutoLinkTextView extends TextView {
         List<AutoLinkItem> autoLinkItems = matchedRanges(text);
 
         for (final AutoLinkItem autoLinkItem : autoLinkItems) {
-
             ClickableSpan clickableSpan = new ClickableSpan() {
                 @Override
                 public void onClick(View widget) {
                     if (autoLinkOnClickListener != null)
-                        autoLinkOnClickListener.onAutoLinkTextClick(autoLinkItem.getMatchedText());
+                        autoLinkOnClickListener.onAutoLinkTextClick(
+                                autoLinkItem.getAutoLinkMode(),
+                                autoLinkItem.getMatchedText());
                 }
 
                 @Override
@@ -89,7 +92,7 @@ public final class AutoLinkTextView extends TextView {
 
     private List<AutoLinkItem> matchedRanges(String text) {
 
-        List<AutoLinkItem> autoLinkItems = new ArrayList<>();
+        List<AutoLinkItem> autoLinkItems = new LinkedList<>();
         for (AutoLinkMode anAutoLinkMode : autoLinkModes) {
             String regex = getRegexByAutoLinkMode(anAutoLinkMode);
             Pattern pattern = Pattern.compile(regex);
@@ -98,11 +101,19 @@ public final class AutoLinkTextView extends TextView {
             if (anAutoLinkMode == AutoLinkMode.MODE_PHONE) {
                 while (matcher.find()) {
                     if (matcher.group().length() > MIN_PHONE_NUMBER_LENGTH)
-                        autoLinkItems.add(new AutoLinkItem(matcher.start(), matcher.end(), matcher.group()));
+                        autoLinkItems.add(new AutoLinkItem(
+                                matcher.start(),
+                                matcher.end(),
+                                matcher.group(),
+                                anAutoLinkMode));
                 }
             } else {
                 while (matcher.find()) {
-                    autoLinkItems.add(new AutoLinkItem(matcher.start(), matcher.end(), matcher.group()));
+                    autoLinkItems.add(new AutoLinkItem(
+                            matcher.start(),
+                            matcher.end(),
+                            matcher.group(),
+                            anAutoLinkMode));
                 }
             }
         }

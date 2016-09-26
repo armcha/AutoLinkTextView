@@ -18,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
         AutoLinkTextView textView = (AutoLinkTextView) findViewById(R.id.active);
 
         textView.setAutoLinkMode(
-                AutoLinkMode.MODE_EMAIL);
+                AutoLinkMode.MODE_PHONE,
+                AutoLinkMode.MODE_HASHTAG);
 
         textView.setAutoLinkText("Lorem Ipsum is #simply dummy text of the printing and #typesetting industry. " +
                         "Lorem 093 02 30 17 has been @since the 1500s #the @industry's standard dummy text.com ever @since the 1500s, when an unknown " +
@@ -32,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
         textView.setAutoLinkOnClickListener(new AutoLinkOnClickListener() {
             @Override
-            public void onAutoLinkTextClick(String matchedText) {
-                Log.e("onAutoLinkTextClick ", "" + matchedText);
+            public void onAutoLinkTextClick(AutoLinkMode autoLinkMode, String matchedText) {
+                Log.e("onAutoLinkTextClick ", "matchedText is: " + matchedText + " mode is: " + autoLinkMode);
             }
         });
     }

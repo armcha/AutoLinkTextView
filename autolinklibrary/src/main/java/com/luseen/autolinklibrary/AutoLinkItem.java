@@ -12,10 +12,17 @@ public class AutoLinkItem {
 
     private String matchedText;
 
-    public AutoLinkItem(Integer startPoint, Integer endPoint, String matchedText) {
+    private AutoLinkMode autoLinkMode;
+
+    public AutoLinkItem(Integer startPoint, Integer endPoint, String matchedText, AutoLinkMode autoLinkMode) {
         this.startPoint = startPoint;
         this.endPoint = endPoint;
         this.matchedText = matchedText;
+        this.autoLinkMode = autoLinkMode;
+    }
+
+    public AutoLinkMode getAutoLinkMode() {
+        return autoLinkMode;
     }
 
     public String getMatchedText() {

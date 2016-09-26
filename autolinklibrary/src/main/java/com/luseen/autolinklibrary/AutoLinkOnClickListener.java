@@ -6,5 +6,5 @@ package com.luseen.autolinklibrary;
 
 public interface AutoLinkOnClickListener {
 
-    void onAutoLinkTextClick(String matchedText);
+    void onAutoLinkTextClick(AutoLinkMode autoLinkMode,String matchedText);
 }
