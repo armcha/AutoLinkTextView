@@ -6,7 +6,7 @@ import android.util.Patterns;
  * Created by Chatikyan on 25.09.2016-19:23.
  */
 
-public class RegexParser {
+class RegexParser {
 
     static final String PHONE_PATTERN = Patterns.PHONE.pattern();
     static final String EMAIL_PATTERN = Patterns.EMAIL_ADDRESS.pattern();

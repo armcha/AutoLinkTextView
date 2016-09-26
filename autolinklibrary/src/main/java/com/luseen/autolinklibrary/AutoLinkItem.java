@@ -4,7 +4,7 @@ package com.luseen.autolinklibrary;
  * Created by Chatikyan on 25.09.2016-19:43.
  */
 
-public class AutoLinkItem {
+class AutoLinkItem {
 
     private AutoLinkMode autoLinkMode;
 

@@ -1,20 +1,12 @@
 package com.luseen.autolinklibrary;
 
-import android.animation.ArgbEvaluator;
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Color;
 import android.support.annotation.ColorInt;
 import android.text.Spannable;
 import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.TextPaint;
-import android.text.method.LinkMovementMethod;
-import android.text.style.ClickableSpan;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.util.Property;
 import android.view.View;
 import android.widget.TextView;
 
@@ -29,9 +21,7 @@ import java.util.regex.Pattern;
 
 public final class AutoLinkTextView extends TextView {
 
-    public static final String TAG = AutoLinkTextView.class.getSimpleName();
-
-    private static final int DEFAULT_ANIMATION_DURATION = 500;
+    static final String TAG = AutoLinkTextView.class.getSimpleName();
 
     private static final int MIN_PHONE_NUMBER_LENGTH = 8;
 
@@ -64,14 +54,13 @@ public final class AutoLinkTextView extends TextView {
         super.setHighlightColor(Color.TRANSPARENT);
     }
 
-    public void setAutoLinkText(String text, int autoLinkTextColor) {
+    public void setAutoLinkText(String text) {
         // TODO: 26.09.2016 remove after publication
         long startTime = System.currentTimeMillis();
 
         SpannableString spannableString = makeSpannableString(text);
         setText(spannableString);
         setMovementMethod(new LinkTouchMovementMethod());
-        setLinkTextColor(autoLinkTextColor);
 
         long endTime = System.currentTimeMillis();
         long duration = (endTime - startTime);
@@ -111,7 +100,7 @@ public final class AutoLinkTextView extends TextView {
 
         List<AutoLinkItem> autoLinkItems = new LinkedList<>();
         for (AutoLinkMode anAutoLinkMode : autoLinkModes) {
-            String regex = getRegexByAutoLinkMode(anAutoLinkMode);
+            String regex = Utils.getRegexByAutoLinkMode(anAutoLinkMode, customRegex);
             Pattern pattern = Pattern.compile(regex);
             Matcher matcher = pattern.matcher(text);
 
@@ -138,29 +127,6 @@ public final class AutoLinkTextView extends TextView {
         return autoLinkItems;
     }
 
-    private String getRegexByAutoLinkMode(AutoLinkMode anAutoLinkMode) {
-        switch (anAutoLinkMode) {
-            case MODE_HASHTAG:
-                return RegexParser.HASHTAG_PATTERN;
-            case MODE_MENTION:
-                return RegexParser.MENTION_PATTERN;
-            case MODE_URL:
-                return RegexParser.URL_PATTERN;
-            case MODE_PHONE:
-                return RegexParser.PHONE_PATTERN;
-            case MODE_EMAIL:
-                return RegexParser.EMAIL_PATTERN;
-            case MODE_CUSTOM:
-                if (customRegex == null) {
-                    Log.e(TAG, "Your custom regex is null, returning URL_PATTERN");
-                    return RegexParser.URL_PATTERN;
-                } else {
-                    return customRegex;
-                }
-            default:
-                return RegexParser.URL_PATTERN;
-        }
-    }
 
     private int getColorByMode(AutoLinkMode autoLinkMode) {
         switch (autoLinkMode) {
@@ -205,7 +171,7 @@ public final class AutoLinkTextView extends TextView {
         this.customModeColor = customModeColor;
     }
 
-    public void setSelectedColor(int defaultSelectedColor) {
+    public void setSelectedColor(@ColorInt int defaultSelectedColor) {
         this.defaultSelectedColor = defaultSelectedColor;
     }
 
