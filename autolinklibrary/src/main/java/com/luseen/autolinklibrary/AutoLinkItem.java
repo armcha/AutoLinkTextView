@@ -6,46 +6,32 @@ package com.luseen.autolinklibrary;
 
 public class AutoLinkItem {
 
-    private Integer startPoint;
-
-    private Integer endPoint;
+    private AutoLinkMode autoLinkMode;
 
     private String matchedText;
 
-    private AutoLinkMode autoLinkMode;
+    private int startPoint,endPoint;
 
-    public AutoLinkItem(Integer startPoint, Integer endPoint, String matchedText, AutoLinkMode autoLinkMode) {
+    AutoLinkItem(int startPoint, int endPoint, String matchedText, AutoLinkMode autoLinkMode) {
         this.startPoint = startPoint;
         this.endPoint = endPoint;
         this.matchedText = matchedText;
         this.autoLinkMode = autoLinkMode;
     }
 
-    public AutoLinkMode getAutoLinkMode() {
+    AutoLinkMode getAutoLinkMode() {
         return autoLinkMode;
     }
 
-    public String getMatchedText() {
+    String getMatchedText() {
         return matchedText;
     }
 
-    public void setMatchedText(String matchedText) {
-        this.matchedText = matchedText;
-    }
-
-    public Integer getStartPoint() {
+    int getStartPoint() {
         return startPoint;
     }
 
-    public void setStartPoint(Integer startPoint) {
-        this.startPoint = startPoint;
-    }
-
-    public Integer getEndPoint() {
+    int getEndPoint() {
         return endPoint;
-    }
-
-    public void setEndPoint(Integer endPoint) {
-        this.endPoint = endPoint;
     }
 }
