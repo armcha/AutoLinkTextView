@@ -35,7 +35,7 @@ Add AutoLinkTextView to your layout
 AutoLinkTextView autoLinkTextView = (AutoLinkTextView) findViewById(R.id.active);
 ```
 
-Set up modes
+Set up mode or modes
 ```java
 autoLinkTextView.setAutoLinkMode(
                 AutoLinkMode.MODE_PHONE);
@@ -90,6 +90,8 @@ autoLinkTextView.setAutoLinkMode(
                 AutoLinkMode.MODE_MENTION,
                 AutoLinkMode.MODE_PHONE);
 ```
+![](screens/screen1.png)
+-------------------------
 You can also change text color for autoLink mode
 ```java
 autoLinkTextView.setHashtagModeColor(ContextCompat.getColor(this, R.color.yourColor));
@@ -99,11 +101,12 @@ autoLinkTextView.setUrlModeColor(ContextCompat.getColor(this, R.color.yourColor)
 autoLinkTextView.setMentionModeColor(ContextCompat.getColor(this, R.color.yourColor));
 autoLinkTextView.setEmailModeColor(ContextCompat.getColor(this, R.color.yourColor));
 ```
+-------------------------
 And also autoLink text pressed state color
 ```java
 autoLinkTextView.setSelectedStateColor(ContextCompat.getColor(this, R.color.yourColor));
 ```
-
+-------------------------
 ## Contact
 
 Pull requests are more than welcome.
