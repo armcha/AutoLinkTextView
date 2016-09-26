@@ -1,4 +1,6 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+
 
 android {
     compileSdkVersion 24
@@ -12,6 +14,7 @@ android {
     }
     buildTypes {
         release {
+            tasks.withType(Javadoc).all { enabled = false }
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -21,4 +24,13 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:24.2.1'
+}
+
+publish {
+    groupId = 'com.github.armcha'
+    artifactId = 'AutoLinkTextView'
+    publishVersion = '0.1.0'
+    desc = 'Auto Link Text View'
+    licences = ['MIT']
+    website = 'https://github.com/armcha/AutoLinkTextView'
 }
