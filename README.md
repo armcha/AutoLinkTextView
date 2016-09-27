@@ -1,6 +1,7 @@
 # AutoLinkTextView
 
-AutoLinkTextView is TextView drop-in replacement supporting Hashtags (#), Mentions (@) , URLs (http://), Phone and Email with click handling
+AutoLinkTextView is TextView that supports Hashtags (#), Mentions (@) , URLs (http://),
+Phone and Email by automatically detecting with click handling
 
 ![](screens/gif1.gif)
 
@@ -10,8 +11,8 @@ The current minSDK version is API level 14 Android 4.0 (ICE CREAM SANDWICH).
 
 * Default support for **Hashtag, Mention, Link, Phone number and Email**
 * Support for **custom types** via regex
-* Ability to set type foreground color
-* Ability to enable highlighting only for the desired types
+* Ability to set text color
+* Ability to set pressed state color
 
 ![](screens/screen1.png)
 
@@ -19,7 +20,9 @@ The current minSDK version is API level 14 Android 4.0 (ICE CREAM SANDWICH).
 -----------------------
 
 Gradle:
-coming soon
+```groovy
+compile 'com.github.armcha:AutoLinkTextView:0.1.0'
+```
 
 ## Setup and usage
 
@@ -80,7 +83,7 @@ AutoLinkMode.MODE_CUSTOM
 #![](screens/screen7.png)
 if you use custom mode, you should also add custom regex,
 ```java
-autoLinkTextView.addCustomRegex("\\sGoogle\\b");
+autoLinkTextView.addCustomRegex("\\sAllo\\b");
 ```
 Note:Otherwise ```MODE_CUSTOM``` will return ```MODE_URL```
 -------------------------
@@ -122,7 +125,7 @@ License
 
 
       Space Navigation library for Android
-      Copyright (c) 2016 Arman Chatikyan (https://github.com/armcha/Space-Navigation-View).
+      Copyright (c) 2016 Arman Chatikyan (https://github.com/armcha/AutoLinkTextView).
 
       Licensed under the Apache License, Version 2.0 (the "License");
       you may not use this file except in compliance with the License.
