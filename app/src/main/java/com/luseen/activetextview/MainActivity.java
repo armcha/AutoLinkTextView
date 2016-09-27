@@ -19,6 +19,9 @@ public class MainActivity extends AppCompatActivity {
         AutoLinkTextView autoLinkTextView = (AutoLinkTextView) findViewById(R.id.active);
 
         autoLinkTextView.setAutoLinkMode(
+                AutoLinkMode.MODE_HASHTAG,
+                AutoLinkMode.MODE_PHONE,
+                AutoLinkMode.MODE_MENTION,
                 AutoLinkMode.MODE_CUSTOM);
 
         autoLinkTextView.addCustomRegex("\\sAllo\\b");

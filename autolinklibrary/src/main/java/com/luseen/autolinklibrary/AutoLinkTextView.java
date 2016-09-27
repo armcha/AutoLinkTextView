@@ -6,7 +6,6 @@ import android.support.annotation.ColorInt;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -55,16 +54,9 @@ public final class AutoLinkTextView extends TextView {
     }
 
     public void setAutoLinkText(String text) {
-        // TODO: 26.09.2016 remove after publication
-        long startTime = System.currentTimeMillis();
-
         SpannableString spannableString = makeSpannableString(text);
         setText(spannableString);
         setMovementMethod(new LinkTouchMovementMethod());
-
-        long endTime = System.currentTimeMillis();
-        long duration = (endTime - startTime);
-        Log.e("setAutoLinkText ", duration + " milli second");
     }
 
     private SpannableString makeSpannableString(String text) {
@@ -100,7 +92,7 @@ public final class AutoLinkTextView extends TextView {
 
         List<AutoLinkItem> autoLinkItems = new LinkedList<>();
 
-        if(autoLinkModes == null){
+        if (autoLinkModes == null) {
             throw new NullPointerException("Please add at least on mode");
         }
 
