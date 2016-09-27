@@ -90,8 +90,11 @@ Note:Otherwise ```MODE_CUSTOM``` will return ```MODE_URL```
 You can also use multiple types
 ```java
 autoLinkTextView.setAutoLinkMode(
+                AutoLinkMode.MODE_HASHTAG,
+                AutoLinkMode.MODE_PHONE,
+                AutoLinkMode.MODE_URL,
                 AutoLinkMode.MODE_MENTION,
-                AutoLinkMode.MODE_PHONE);
+                AutoLinkMode.MODE_CUSTOM);
 ```
 ![](screens/screen1.png)
 -------------------------
