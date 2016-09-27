@@ -1,7 +1,7 @@
 # AutoLinkTextView
 
 AutoLinkTextView is TextView that supports Hashtags (#), Mentions (@) , URLs (http://),
-Phone and Email by automatically detecting with click handling
+Phone and Email by automatically detecting and ability to handle clicks
 
 ![](screens/gif1.gif)
 
