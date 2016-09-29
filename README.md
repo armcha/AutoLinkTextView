@@ -40,7 +40,7 @@ AutoLinkTextView autoLinkTextView = (AutoLinkTextView) findViewById(R.id.active)
 
 Set up mode or modes
 ```java
-autoLinkTextView.setAutoLinkMode(
+autoLinkTextView.addAutoLinkMode(
                 AutoLinkMode.MODE_PHONE);
 ```
 
