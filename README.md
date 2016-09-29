@@ -1,4 +1,5 @@
 # AutoLinkTextView
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AutoLinkTextView-green.svg?style=true)](https://android-arsenal.com/details/1/4419)
 
 AutoLinkTextView is TextView that supports Hashtags (#), Mentions (@) , URLs (http://),
 Phone and Email automatically detecting and ability to handle clicks.
