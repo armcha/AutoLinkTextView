@@ -1,7 +1,7 @@
 # AutoLinkTextView
 
 AutoLinkTextView is TextView that supports Hashtags (#), Mentions (@) , URLs (http://),
-Phone and Email by automatically detecting and ability to handle clicks
+Phone and Email automatically detecting and ability to handle clicks.
 
 ![](screens/gif1.gif)
 
@@ -21,7 +21,7 @@ The current minSDK version is API level 14 Android 4.0 (ICE CREAM SANDWICH).
 
 Gradle:
 ```groovy
-compile 'com.github.armcha:AutoLinkTextView:0.1.0'
+compile 'com.github.armcha:AutoLinkTextView:0.1.1'
 ```
 
 ## Setup and usage
@@ -83,13 +83,13 @@ AutoLinkMode.MODE_CUSTOM
 #![](screens/screen7.png)
 if you use custom mode, you should also add custom regex,
 ```java
-autoLinkTextView.addCustomRegex("\\sAllo\\b");
+autoLinkTextView.setCustomRegex("\\sAllo\\b");
 ```
 Note:Otherwise ```MODE_CUSTOM``` will return ```MODE_URL```
 -------------------------
 You can also use multiple types
 ```java
-autoLinkTextView.setAutoLinkMode(
+autoLinkTextView.addAutoLinkMode(
                 AutoLinkMode.MODE_HASHTAG,
                 AutoLinkMode.MODE_PHONE,
                 AutoLinkMode.MODE_URL,

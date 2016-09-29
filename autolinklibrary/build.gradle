@@ -23,13 +23,13 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:support-annotations:24.2.1'
 }
 
 publish {
     groupId = 'com.github.armcha'
     artifactId = 'AutoLinkTextView'
-    publishVersion = '0.1.0'
+    publishVersion = '0.1.1'
     desc = 'Auto Link Text View'
     licences = ['MIT']
     website = 'https://github.com/armcha/AutoLinkTextView'

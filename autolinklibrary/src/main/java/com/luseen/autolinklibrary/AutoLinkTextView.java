@@ -93,7 +93,7 @@ public final class AutoLinkTextView extends TextView {
         List<AutoLinkItem> autoLinkItems = new LinkedList<>();
 
         if (autoLinkModes == null) {
-            throw new NullPointerException("Please add at least on mode");
+            throw new NullPointerException("Please add at least one mode");
         }
 
         for (AutoLinkMode anAutoLinkMode : autoLinkModes) {
@@ -172,11 +172,11 @@ public final class AutoLinkTextView extends TextView {
         this.defaultSelectedColor = defaultSelectedColor;
     }
 
-    public void setAutoLinkMode(AutoLinkMode... autoLinkModes) {
+    public void addAutoLinkMode(AutoLinkMode... autoLinkModes) {
         this.autoLinkModes = autoLinkModes;
     }
 
-    public void addCustomRegex(String regex) {
+    public void setCustomRegex(String regex) {
         this.customRegex = regex;
     }
 
