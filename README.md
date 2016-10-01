@@ -123,7 +123,7 @@ Please fell free to contact me if there is any problem when using the library.
 - **Facebook**: https://web.facebook.com/chatikyana
 - **Google +**: https://plus.google.com/112011638040018774140
 - **Website**: http://luseen.com/
-- **Twitter**: @ArmanChatikyan
+- **Twitter**: http://twitter.com/@ArmanChatikyan
 
 
 License
