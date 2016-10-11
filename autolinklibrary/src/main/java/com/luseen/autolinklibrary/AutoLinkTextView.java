@@ -32,6 +32,8 @@ public final class AutoLinkTextView extends TextView {
 
     private String customRegex;
 
+    private boolean isUnderLineEnabled = false;
+
     private int mentionModeColor = DEFAULT_COLOR;
     private int hashtagModeColor = DEFAULT_COLOR;
     private int urlModeColor = DEFAULT_COLOR;
@@ -68,7 +70,7 @@ public final class AutoLinkTextView extends TextView {
         for (final AutoLinkItem autoLinkItem : autoLinkItems) {
             int currentColor = getColorByMode(autoLinkItem.getAutoLinkMode());
 
-            TouchableSpan clickableSpan = new TouchableSpan(currentColor, defaultSelectedColor) {
+            TouchableSpan clickableSpan = new TouchableSpan(currentColor, defaultSelectedColor,isUnderLineEnabled) {
                 @Override
                 public void onClick(View widget) {
                     if (autoLinkOnClickListener != null)
@@ -182,5 +184,9 @@ public final class AutoLinkTextView extends TextView {
 
     public void setAutoLinkOnClickListener(AutoLinkOnClickListener autoLinkOnClickListener) {
         this.autoLinkOnClickListener = autoLinkOnClickListener;
+    }
+
+    public void setUnderLineEnabled(boolean underLineEnabled) {
+        isUnderLineEnabled = underLineEnabled;
     }
 }

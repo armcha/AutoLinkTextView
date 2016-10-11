@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ActiveTextView.iml" filepath="$PROJECT_DIR$/ActiveTextView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AutoLinkTextView.iml" filepath="$PROJECT_DIR$/AutoLinkTextView.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/autolinklibrary/autolinklibrary.iml" filepath="$PROJECT_DIR$/autolinklibrary/autolinklibrary.iml" />
     </modules>
