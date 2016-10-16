@@ -5,7 +5,9 @@ import android.graphics.Color;
 import android.support.annotation.ColorInt;
 import android.text.Spannable;
 import android.text.SpannableString;
+import android.text.TextPaint;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -126,7 +128,6 @@ public final class AutoLinkTextView extends TextView {
         return autoLinkItems;
     }
 
-
     private int getColorByMode(AutoLinkMode autoLinkMode) {
         switch (autoLinkMode) {
             case MODE_HASHTAG:
@@ -186,7 +187,7 @@ public final class AutoLinkTextView extends TextView {
         this.autoLinkOnClickListener = autoLinkOnClickListener;
     }
 
-    public void setUnderLineEnabled(boolean underLineEnabled) {
-        isUnderLineEnabled = underLineEnabled;
+    public void enableUnderLine() {
+        isUnderLineEnabled = true;
     }
 }

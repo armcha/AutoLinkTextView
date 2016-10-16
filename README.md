@@ -114,6 +114,12 @@ And also autoLink text pressed state color
 autoLinkTextView.setSelectedStateColor(ContextCompat.getColor(this, R.color.yourColor));
 ```
 -------------------------
+Enable under line
+```java
+autoLinkTextView.enableUnderLine();
+```
+#![](screens/screen8.png)
+-------------------------
 ## Contact
 
 Pull requests are more than welcome.
