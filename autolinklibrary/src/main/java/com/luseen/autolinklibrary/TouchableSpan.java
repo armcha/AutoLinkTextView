@@ -28,7 +28,8 @@ abstract class TouchableSpan extends ClickableSpan {
     @Override
     public void updateDrawState(TextPaint textPaint) {
         super.updateDrawState(textPaint);
-        textPaint.setColor(isPressed ? pressedTextColor : normalTextColor);
+        int textColor = isPressed ? pressedTextColor : normalTextColor;
+        textPaint.setColor(textColor);
         textPaint.bgColor = Color.TRANSPARENT;
         textPaint.setUnderlineText(isUnderLineEnabled);
     }

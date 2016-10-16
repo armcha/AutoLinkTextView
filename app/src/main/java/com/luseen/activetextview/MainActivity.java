@@ -24,10 +24,10 @@ public class MainActivity extends AppCompatActivity {
                 AutoLinkMode.MODE_HASHTAG,
                 AutoLinkMode.MODE_PHONE,
                 AutoLinkMode.MODE_URL,
-                AutoLinkMode.MODE_MENTION,
-                AutoLinkMode.MODE_CUSTOM);
+                AutoLinkMode.MODE_EMAIL,
+                AutoLinkMode.MODE_MENTION);
 
-        autoLinkTextView.setCustomRegex("\\sAllo\\b");
+        //autoLinkTextView.setCustomRegex("\\sAllo\\b");
 
         autoLinkTextView.setHashtagModeColor(ContextCompat.getColor(this, R.color.color2));
         autoLinkTextView.setPhoneModeColor(ContextCompat.getColor(this, R.color.color3));
