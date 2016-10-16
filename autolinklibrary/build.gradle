@@ -29,7 +29,7 @@ dependencies {
 publish {
     groupId = 'com.github.armcha'
     artifactId = 'AutoLinkTextView'
-    publishVersion = '0.1.2'
+    publishVersion = '0.2.0'
     desc = 'Auto Link Text View'
     licences = ['MIT']
     website = 'https://github.com/armcha/AutoLinkTextView'

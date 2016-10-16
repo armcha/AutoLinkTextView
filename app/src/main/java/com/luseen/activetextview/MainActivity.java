@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         AutoLinkTextView autoLinkTextView = (AutoLinkTextView) findViewById(R.id.active);
 
-        autoLinkTextView.enableUnderLine();
+        //autoLinkTextView.enableUnderLine();
 
         autoLinkTextView.addAutoLinkMode(
                 AutoLinkMode.MODE_HASHTAG,

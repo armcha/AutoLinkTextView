@@ -22,7 +22,7 @@ The current minSDK version is API level 14 Android 4.0 (ICE CREAM SANDWICH).
 
 Gradle:
 ```groovy
-compile 'com.github.armcha:AutoLinkTextView:0.1.1'
+compile 'com.github.armcha:AutoLinkTextView:0.2.0'
 ```
 
 ## Setup and usage
