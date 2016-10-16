@@ -8,6 +8,9 @@ Phone and Email automatically detecting and ability to handle clicks.
 
 The current minSDK version is API level 14 Android 4.0 (ICE CREAM SANDWICH).
 
+## Download sample [apk][77]
+[77]: https://github.com/armcha/AutoLinkTextView/blob/master/screens/AutoLinkTextView.apk
+
 ## Features
 
 * Default support for **Hashtag, Mention, Link, Phone number and Email**
