@@ -139,7 +139,7 @@ License
 --------
 
 
-      Space Navigation library for Android
+      Auto Link TextView library for Android
       Copyright (c) 2016 Arman Chatikyan (https://github.com/armcha/AutoLinkTextView).
 
       Licensed under the Apache License, Version 2.0 (the "License");
