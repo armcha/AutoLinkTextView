@@ -5,9 +5,7 @@ import android.graphics.Color;
 import android.support.annotation.ColorInt;
 import android.text.Spannable;
 import android.text.SpannableString;
-import android.text.TextPaint;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -20,7 +18,7 @@ import java.util.regex.Pattern;
  * Created by Chatikyan on 25.09.2016-18:53.
  */
 
-public final class AutoLinkTextView extends TextView {
+public class AutoLinkTextView extends TextView {
 
     static final String TAG = AutoLinkTextView.class.getSimpleName();
 
@@ -72,7 +70,7 @@ public final class AutoLinkTextView extends TextView {
         for (final AutoLinkItem autoLinkItem : autoLinkItems) {
             int currentColor = getColorByMode(autoLinkItem.getAutoLinkMode());
 
-            TouchableSpan clickableSpan = new TouchableSpan(currentColor, defaultSelectedColor,isUnderLineEnabled) {
+            TouchableSpan clickableSpan = new TouchableSpan(currentColor, defaultSelectedColor, isUnderLineEnabled) {
                 @Override
                 public void onClick(View widget) {
                     if (autoLinkOnClickListener != null)
