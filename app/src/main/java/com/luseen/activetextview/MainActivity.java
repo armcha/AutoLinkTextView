@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         autoLinkTextView.setCustomModeColor(ContextCompat.getColor(this, R.color.color1));
         autoLinkTextView.setMentionModeColor(ContextCompat.getColor(this, R.color.color5));
 
-        autoLinkTextView.setAutoLinkText(getString(R.string.long_text));
+        autoLinkTextView.setText(getString(R.string.long_text));
 
         autoLinkTextView.setAutoLinkOnClickListener(new AutoLinkOnClickListener() {
             @Override
