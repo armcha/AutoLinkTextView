@@ -55,13 +55,18 @@ public class AutoLinkTextView extends TextView {
         super.setHighlightColor(Color.TRANSPARENT);
     }
 
-    public void setAutoLinkText(String text) {
+    @Override
+    public void setText(CharSequence text, BufferType type) {
+        if (TextUtils.isEmpty(text)) {
+            super.setText(text, type);
+            return;
+        }
         SpannableString spannableString = makeSpannableString(text);
-        setText(spannableString);
         setMovementMethod(new LinkTouchMovementMethod());
+        super.setText(spannableString, type);
     }
 
-    private SpannableString makeSpannableString(String text) {
+    private SpannableString makeSpannableString(CharSequence text) {
 
         final SpannableString spannableString = new SpannableString(text);
 
@@ -90,7 +95,7 @@ public class AutoLinkTextView extends TextView {
         return spannableString;
     }
 
-    private List<AutoLinkItem> matchedRanges(String text) {
+    private List<AutoLinkItem> matchedRanges(CharSequence text) {
 
         List<AutoLinkItem> autoLinkItems = new LinkedList<>();
 
