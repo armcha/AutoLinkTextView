@@ -22,7 +22,7 @@ import java.util.regex.Pattern;
  * Created by Chatikyan on 25.09.2016-18:53.
  */
 
-public final class AutoLinkTextView extends TextView {
+public class AutoLinkTextView extends TextView {
 
     static final String TAG = AutoLinkTextView.class.getSimpleName();
 
@@ -35,6 +35,8 @@ public final class AutoLinkTextView extends TextView {
     private AutoLinkMode[] autoLinkModes;
 
     private String customRegex;
+
+    private boolean isUnderLineEnabled = false;
 
     private int mentionModeColor = DEFAULT_COLOR;
     private int hashtagModeColor = DEFAULT_COLOR;
@@ -57,13 +59,18 @@ public final class AutoLinkTextView extends TextView {
         super.setHighlightColor(Color.TRANSPARENT);
     }
 
-    public void setAutoLinkText(String text) {
+    @Override
+    public void setText(CharSequence text, BufferType type) {
+        if (TextUtils.isEmpty(text)) {
+            super.setText(text, type);
+            return;
+        }
         SpannableString spannableString = makeSpannableString(text);
-        setText(spannableString);
         setMovementMethod(new LinkTouchMovementMethod());
+        super.setText(spannableString, type);
     }
 
-    private SpannableString makeSpannableString(String text) {
+    private SpannableString makeSpannableString(CharSequence text) {
 
         final SpannableString spannableString = new SpannableString(text);
 
@@ -72,7 +79,7 @@ public final class AutoLinkTextView extends TextView {
         for (final AutoLinkItem autoLinkItem : autoLinkItems) {
             int currentColor = getColorByMode(autoLinkItem.getAutoLinkMode());
 
-            TouchableSpan clickableSpan = new TouchableSpan(currentColor, defaultSelectedColor) {
+            TouchableSpan clickableSpan = new TouchableSpan(currentColor, defaultSelectedColor, isUnderLineEnabled) {
                 @Override
                 public void onClick(View widget) {
                     if (autoLinkOnClickListener != null)
@@ -92,7 +99,7 @@ public final class AutoLinkTextView extends TextView {
         return spannableString;
     }
 
-    private List<AutoLinkItem> matchedRanges(String text) {
+    private List<AutoLinkItem> matchedRanges(CharSequence text) {
 
         List<AutoLinkItem> autoLinkItems = new LinkedList<>();
 
@@ -127,7 +134,6 @@ public final class AutoLinkTextView extends TextView {
 
         return autoLinkItems;
     }
-
 
     private int getColorByMode(AutoLinkMode autoLinkMode) {
         switch (autoLinkMode) {
@@ -188,6 +194,7 @@ public final class AutoLinkTextView extends TextView {
         this.autoLinkOnClickListener = autoLinkOnClickListener;
     }
 
+
     /**
      * fix ellipsize not work bug
      * https://stackoverflow.com/questions/14691511/textview-using-spannable-ellipsize-doesnt-work
@@ -229,6 +236,10 @@ public final class AutoLinkTextView extends TextView {
         } else {
             super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         }
+    }
+
+    public void enableUnderLine() {
+        isUnderLineEnabled = true;
     }
 
 }

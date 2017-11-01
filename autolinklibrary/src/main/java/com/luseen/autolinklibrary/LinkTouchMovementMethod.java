@@ -17,14 +17,15 @@ class LinkTouchMovementMethod extends LinkMovementMethod {
 
     @Override
     public boolean onTouchEvent(TextView textView, final Spannable spannable, MotionEvent event) {
-        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+        int action  = event.getAction();
+        if (action == MotionEvent.ACTION_DOWN) {
             pressedSpan = getPressedSpan(textView, spannable, event);
             if (pressedSpan != null) {
                 pressedSpan.setPressed(true);
                 Selection.setSelection(spannable, spannable.getSpanStart(pressedSpan),
                         spannable.getSpanEnd(pressedSpan));
             }
-        } else if (event.getAction() == MotionEvent.ACTION_MOVE) {
+        } else if (action == MotionEvent.ACTION_MOVE) {
             TouchableSpan touchedSpan = getPressedSpan(textView, spannable, event);
             if (pressedSpan != null && touchedSpan != pressedSpan) {
                 pressedSpan.setPressed(false);
@@ -54,10 +55,10 @@ class LinkTouchMovementMethod extends LinkMovementMethod {
         y += textView.getScrollY();
 
         Layout layout = textView.getLayout();
-        int line = layout.getLineForVertical(y);
-        int off = layout.getOffsetForHorizontal(line, x);
+        int verticalLine = layout.getLineForVertical(y);
+        int horizontalOffset = layout.getOffsetForHorizontal(verticalLine, x);
 
-        TouchableSpan[] link = spannable.getSpans(off, off, TouchableSpan.class);
+        TouchableSpan[] link = spannable.getSpans(horizontalOffset, horizontalOffset, TouchableSpan.class);
         TouchableSpan touchedSpan = null;
         if (link.length > 0) {
             touchedSpan = link[0];

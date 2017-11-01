@@ -18,21 +18,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         AutoLinkTextView autoLinkTextView = (AutoLinkTextView) findViewById(R.id.active);
 
+        //autoLinkTextView.enableUnderLine();
+
         autoLinkTextView.addAutoLinkMode(
                 AutoLinkMode.MODE_HASHTAG,
                 AutoLinkMode.MODE_PHONE,
                 AutoLinkMode.MODE_URL,
-                AutoLinkMode.MODE_MENTION,
-                AutoLinkMode.MODE_CUSTOM);
+                AutoLinkMode.MODE_EMAIL,
+                AutoLinkMode.MODE_MENTION);
 
-        autoLinkTextView.setCustomRegex("\\sAllo\\b");
+        //autoLinkTextView.setCustomRegex("\\sAllo\\b");
 
         autoLinkTextView.setHashtagModeColor(ContextCompat.getColor(this, R.color.color2));
         autoLinkTextView.setPhoneModeColor(ContextCompat.getColor(this, R.color.color3));
         autoLinkTextView.setCustomModeColor(ContextCompat.getColor(this, R.color.color1));
         autoLinkTextView.setMentionModeColor(ContextCompat.getColor(this, R.color.color5));
 
-        autoLinkTextView.setAutoLinkText(getString(R.string.long_text));
+        autoLinkTextView.setText(getString(R.string.long_text));
 
         autoLinkTextView.setAutoLinkOnClickListener(new AutoLinkOnClickListener() {
             @Override

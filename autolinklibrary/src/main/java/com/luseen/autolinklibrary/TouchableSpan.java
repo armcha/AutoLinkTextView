@@ -13,10 +13,12 @@ abstract class TouchableSpan extends ClickableSpan {
     private boolean isPressed;
     private int normalTextColor;
     private int pressedTextColor;
+    private boolean isUnderLineEnabled;
 
-    TouchableSpan(int normalTextColor, int pressedTextColor) {
+    TouchableSpan(int normalTextColor, int pressedTextColor, boolean isUnderLineEnabled) {
         this.normalTextColor = normalTextColor;
         this.pressedTextColor = pressedTextColor;
+        this.isUnderLineEnabled = isUnderLineEnabled;
     }
 
     void setPressed(boolean isSelected) {
@@ -26,8 +28,9 @@ abstract class TouchableSpan extends ClickableSpan {
     @Override
     public void updateDrawState(TextPaint textPaint) {
         super.updateDrawState(textPaint);
-        textPaint.setColor(isPressed ? pressedTextColor : normalTextColor);
+        int textColor = isPressed ? pressedTextColor : normalTextColor;
+        textPaint.setColor(textColor);
         textPaint.bgColor = Color.TRANSPARENT;
-        textPaint.setUnderlineText(false);
+        textPaint.setUnderlineText(isUnderLineEnabled);
     }
 }

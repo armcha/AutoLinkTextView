@@ -8,6 +8,9 @@ Phone and Email automatically detecting and ability to handle clicks.
 
 The current minSDK version is API level 14 Android 4.0 (ICE CREAM SANDWICH).
 
+## Download sample [apk][77]
+[77]: https://github.com/armcha/AutoLinkTextView/raw/master/screens/AutoLinkTextView.apk
+
 ## Features
 
 * Default support for **Hashtag, Mention, Link, Phone number and Email**
@@ -22,7 +25,7 @@ The current minSDK version is API level 14 Android 4.0 (ICE CREAM SANDWICH).
 
 Gradle:
 ```groovy
-compile 'com.github.armcha:AutoLinkTextView:0.1.1'
+compile 'com.github.armcha:AutoLinkTextView:0.3.0'
 ```
 
 ## Setup and usage
@@ -114,6 +117,12 @@ And also autoLink text pressed state color
 autoLinkTextView.setSelectedStateColor(ContextCompat.getColor(this, R.color.yourColor));
 ```
 -------------------------
+Enable under line
+```java
+autoLinkTextView.enableUnderLine();
+```
+#![](screens/screen8.png)
+-------------------------
 ## Contact
 
 Pull requests are more than welcome.
@@ -123,12 +132,14 @@ Please fell free to contact me if there is any problem when using the library.
 - **Facebook**: https://web.facebook.com/chatikyana
 - **Google +**: https://plus.google.com/112011638040018774140
 - **Website**: http://luseen.com/
+- **Twitter**: http://twitter.com/@ArmanChatikyan
+
 
 License
 --------
 
 
-      Space Navigation library for Android
+      Auto Link TextView library for Android
       Copyright (c) 2016 Arman Chatikyan (https://github.com/armcha/AutoLinkTextView).
 
       Licensed under the Apache License, Version 2.0 (the "License");
