@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.support.annotation.ColorInt;
 import android.text.Spannable;
 import android.text.SpannableString;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.TextView;
