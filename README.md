@@ -17,6 +17,7 @@ The current minSDK version is API level 14 Android 4.0 (ICE CREAM SANDWICH).
 * Support for **custom types** via regex
 * Ability to set text color
 * Ability to set pressed state color
+* Ability to make specific modes **bold**
 
 ![](screens/screen1.png)
 
@@ -116,6 +117,20 @@ And also autoLink text pressed state color
 ```java
 autoLinkTextView.setSelectedStateColor(ContextCompat.getColor(this, R.color.yourColor));
 ```
+-------------------------
+
+Set modes that should be bold
+
+```java
+autoLinkTextView.setBoldAutoLinkModes(
+  AutoLinkMode.MODE_HASHTAG,
+  AutoLinkMode.MODE_PHONE,
+  AutoLinkMode.MODE_URL,
+  AutoLinkMode.MODE_EMAIL,
+  AutoLinkMode.MODE_MENTION
+);
+```
+
 -------------------------
 Enable under line
 ```java
