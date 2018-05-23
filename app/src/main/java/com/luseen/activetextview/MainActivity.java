@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         autoLinkTextView.setAutoLinkOnClickListener(new AutoLinkOnClickListener() {
             @Override
             public void onAutoLinkTextClick(AutoLinkMode autoLinkMode, String matchedText) {
-                showDialog(matchedText, "Mode is: " + autoLinkMode.toString());
+                showDialog(autoLinkMode.toString(), matchedText);
             }
         });
     }

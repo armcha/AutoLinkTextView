@@ -3,16 +3,21 @@ package com.luseen.autolinklibrary;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
+import android.graphics.Typeface;
 import android.support.annotation.ColorInt;
 import android.text.DynamicLayout;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.StaticLayout;
+import android.text.TextUtils;
+import android.text.style.StyleSpan;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.TextView;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -33,6 +38,7 @@ public class AutoLinkTextView extends TextView {
     private AutoLinkOnClickListener autoLinkOnClickListener;
 
     private AutoLinkMode[] autoLinkModes;
+    private List<AutoLinkMode> mBoldAutoLinkModes;
 
     private String customRegex;
 
@@ -94,6 +100,19 @@ public class AutoLinkTextView extends TextView {
                     autoLinkItem.getStartPoint(),
                     autoLinkItem.getEndPoint(),
                     Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+            // check if we should make this auto link item bold
+            if(mBoldAutoLinkModes != null && mBoldAutoLinkModes.contains(autoLinkItem.getAutoLinkMode())){
+
+                // make the auto link item bold
+                spannableString.setSpan(
+                        new StyleSpan(Typeface.BOLD),
+                        autoLinkItem.getStartPoint(),
+                        autoLinkItem.getEndPoint(),
+                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+            }
+
         }
 
         return spannableString;
@@ -184,6 +203,11 @@ public class AutoLinkTextView extends TextView {
 
     public void addAutoLinkMode(AutoLinkMode... autoLinkModes) {
         this.autoLinkModes = autoLinkModes;
+    }
+
+    public void setBoldAutoLinkModes(AutoLinkMode... autoLinkModes) {
+        mBoldAutoLinkModes = new ArrayList<>();
+        mBoldAutoLinkModes.addAll(Arrays.asList(autoLinkModes));
     }
 
     public void setCustomRegex(String regex) {
