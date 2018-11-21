@@ -69,23 +69,29 @@ Customizing
 
 AutoLinkModes
 -------------------------
-AutoLinkMode.MODE_PHONE
-#![](screens/screen2.png)
+### AutoLinkMode.MODE_PHONE
+
+![](screens/screen2.png)
 -------------------------
-AutoLinkMode.MODE_HASHTAG
-#![](screens/screen3.png)
+### AutoLinkMode.MODE_HASHTAG
+
+![](screens/screen3.png)
 -------------------------
-AutoLinkMode.MODE_URL
-#![](screens/screen4.png)
+### AutoLinkMode.MODE_URL
+
+![](screens/screen4.png)
 -------------------------
-AutoLinkMode.MODE_MENTION
-#![](screens/screen5.png)
+### AutoLinkMode.MODE_MENTION
+
+![](screens/screen5.png)
 -------------------------
-AutoLinkMode.MODE_EMAIL
-#![](screens/screen6.png)
+### AutoLinkMode.MODE_EMAIL
+
+![](screens/screen6.png)
 -------------------------
-AutoLinkMode.MODE_CUSTOM
-#![](screens/screen7.png)
+### AutoLinkMode.MODE_CUSTOM
+
+![](screens/screen7.png)
 if you use custom mode, you should also add custom regex,
 ```java
 autoLinkTextView.setCustomRegex("\\sAllo\\b");
@@ -155,7 +161,7 @@ License
 
 
       Auto Link TextView library for Android
-      Copyright (c) 2016 Arman Chatikyan (https://github.com/armcha/AutoLinkTextView).
+      Copyright (c) 2018 Arman Chatikyan (https://github.com/armcha/AutoLinkTextView).
 
       Licensed under the Apache License, Version 2.0 (the "License");
       you may not use this file except in compliance with the License.
