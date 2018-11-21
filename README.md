@@ -20,9 +20,9 @@ The current minSDK version is API level 14 Android 4.0 (ICE CREAM SANDWICH).
 * Ability to make specific modes **bold**
 
 ![](screens/screen1.png)
-
-#Download
 -----------------------
+
+## Download
 
 Gradle:
 ```groovy
@@ -68,31 +68,34 @@ Customizing
 ---------
 
 AutoLinkModes
+
 -------------------------
-### AutoLinkMode.MODE_PHONE
+#### AutoLinkMode.MODE_PHONE
 
 ![](screens/screen2.png)
 -------------------------
-### AutoLinkMode.MODE_HASHTAG
+#### AutoLinkMode.MODE_HASHTAG
 
 ![](screens/screen3.png)
 -------------------------
-### AutoLinkMode.MODE_URL
+#### AutoLinkMode.MODE_URL
 
 ![](screens/screen4.png)
 -------------------------
-### AutoLinkMode.MODE_MENTION
+#### AutoLinkMode.MODE_MENTION
 
 ![](screens/screen5.png)
 -------------------------
-### AutoLinkMode.MODE_EMAIL
+#### AutoLinkMode.MODE_EMAIL
 
 ![](screens/screen6.png)
 -------------------------
-### AutoLinkMode.MODE_CUSTOM
+#### AutoLinkMode.MODE_CUSTOM
 
 ![](screens/screen7.png)
+
 if you use custom mode, you should also add custom regex,
+
 ```java
 autoLinkTextView.setCustomRegex("\\sAllo\\b");
 ```
@@ -138,22 +141,44 @@ autoLinkTextView.setBoldAutoLinkModes(
 ```
 
 -------------------------
-Enable under line
+#### Enable under line
+
 ```java
 autoLinkTextView.enableUnderLine();
 ```
-#![](screens/screen8.png)
+
+![](screens/screen8.png)
 -------------------------
-## Contact
 
-Pull requests are more than welcome.
-Please fell free to contact me if there is any problem when using the library.
+### Contact :book:
 
-- **Email**: armcha01@gmail.com
-- **Facebook**: https://web.facebook.com/chatikyana
-- **Google +**: https://plus.google.com/112011638040018774140
-- **Website**: http://luseen.com/
-- **Twitter**: http://twitter.com/@ArmanChatikyan
+:arrow_forward:  **Email**: chatikyana@gmail.com
+
+:arrow_forward:  **Medium**: https://medium.com/@chatikyan
+
+:arrow_forward:  **Twitter**: https://twitter.com/ArmanChatikyan
+
+:arrow_forward:  **Google+**: https://plus.google.com/+ArmanChatikyan
+
+:arrow_forward:  **Website**: https://armcha.github.io/
+
+License
+--------
+
+      ElasticView
+      Copyright (c) 2018 Arman Chatikyan (https://github.com/armcha/ElasticView).
+
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
 
 
 License
