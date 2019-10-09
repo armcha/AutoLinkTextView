@@ -1,4 +1,4 @@
-# AutoLinkTextView
+# ~~AutoLinkTextView~~
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AutoLinkTextView-green.svg?style=true)](https://android-arsenal.com/details/1/4419)
 
 ## Deprecated
